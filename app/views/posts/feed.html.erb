@@ -1,0 +1,28 @@
+<h1>Feed de Notícias</h1>
+
+<%= render "form", post: @post %>
+
+<% @posts.each do |post| %>
+  <h2><%= link_to post.titulo, post_path(post) %></h2>
+
+
+  <% if !post.avatar.file.nil? %>
+    <%= image_tag post.avatar.thumb.url %>	
+  <% end %>
+  <p><%= post.conteudo %></p>
+  <% @post = post %>
+
+
+  <p>Escrito por <%= link_to post.usuario.nome %></p>
+  
+  <% if current_user == post.usuario %>
+    <p><%= link_to "Editar", edit_post_path(post) %></p>
+  <% end %>
+  
+  <br>
+
+<% end %>
+
+<%= will_paginate @posts %>
+
+

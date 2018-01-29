@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @post.titulo %>
+  
+</p>
+
+
+<% if !@post.avatar.file.nil? %>
+  <%= image_tag @post.avatar.thumb.url %>
+<% end %>
+<p>
+  <strong>Usuario:</strong>
+  <%= @post.usuario.nome %>
+</p>
+
+
+<p>
+  <strong>Conteudo:</strong>
+  <%= @post.conteudo %>
+</p>
+
+<p>
+  <%= render "comentarios/form", comentario: @comentario %>
+</p>
+
+<% @comentarios.each do |comentario| %>
+  <p><%= comentario.conteudo %></p>
+<% end %>
+<br>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
