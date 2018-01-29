@@ -19,7 +19,7 @@
   </div>
   
   <%= form.label "Categoria" %>
-    <%= select("", "categorium_id", Categorium.all.collect {|categorium| [ categorium.nome,
+    <%= select("post", "categoria_id", Categorium.all.collect {|categorium| [ categorium.nome,
       categorium.id ] }, {include_blank: "Categoria"}, id: :categorium) %>
     <br>
 

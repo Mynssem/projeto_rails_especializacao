@@ -13,7 +13,7 @@
   <% @post = post %>
 
 
-  <p>Escrito por <%= link_to post.usuario.nome %></p>
+  <p>Escrito por <%= link_to @post.usuario.nome, usuario_path(id: current_user.id) %></p>
   
   <% if current_user == post.usuario %>
     <p><%= link_to "Editar", edit_post_path(post) %></p>

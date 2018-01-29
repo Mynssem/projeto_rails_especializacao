@@ -12,7 +12,7 @@
 <% end %>
 <p>
   <strong>Usuario:</strong>
-  <%= @post.usuario.nome %>
+  <%= link_to @post.usuario.nome, usuario_path(id: current_user.id) %>
 </p>
 
 
