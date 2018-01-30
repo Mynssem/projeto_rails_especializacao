@@ -14,6 +14,11 @@
   <strong>Usuario:</strong>
   <%= link_to @post.usuario.nome, usuario_path(id: current_user.id) %>
 </p>
+<p>
+  <strong>Categoria:</strong>
+  <%=  @post.categorium.nome %>
+</p>
+
 
 
 <p>
